@@ -5,7 +5,7 @@ import '../../../domain/entity/post/post_list.dart';
 import '../../../domain/usecase/post/get_post_usecase.dart';
 import '../../../utils/dio/dio_error_util.dart';
 
-part '../../../generated/presentation/post/store/post_store.g.dart';
+part '../../../../generated/src/presentation/post/store/post_store.g.dart';
 
 class PostStore = _PostStore with _$PostStore;
 

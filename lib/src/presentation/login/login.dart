@@ -13,7 +13,7 @@ import '../../core/widgets/textfield_widget.dart';
 import '../../data/sharedpref/constants/preferences.dart';
 import '../../di/service_locator.dart';
 import '../../utils/device/device_utils.dart';
-import '../../utils/routes/routes.dart';
+import '../../utils/router/routes.dart';
 import '../home/store/theme/theme_store.dart';
 import 'store/login_store.dart';
 

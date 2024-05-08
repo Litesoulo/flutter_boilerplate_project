@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of '../../../../../presentation/home/store/theme/theme_store.dart';
+part of '../../../../../../src/presentation/home/store/theme/theme_store.dart';
 
 // **************************************************************************
 // StoreGenerator

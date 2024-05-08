@@ -3,8 +3,8 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-import 'di/service_locator.dart';
-import 'presentation/my_app.dart';
+import 'src/di/service_locator.dart';
+import 'src/presentation/my_app.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();

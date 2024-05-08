@@ -4,8 +4,8 @@ import 'package:flutter_mobx/flutter_mobx.dart';
 
 import '../constants/app_theme.dart';
 import '../di/service_locator.dart';
-import '../generated/strings.g.dart';
-import '../utils/routes/routes.dart';
+import '../../generated/strings.g.dart';
+import '../utils/router/routes.dart';
 import 'home/store/language/language_store.dart';
 import 'home/store/theme/theme_store.dart';
 

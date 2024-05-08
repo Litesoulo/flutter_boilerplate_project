@@ -4,7 +4,7 @@ import 'package:mobx/mobx.dart';
 import '../../../../core/stores/error/error_store.dart';
 import '../../../../domain/repository/setting/setting_repository.dart';
 
-part '../../../../generated/presentation/home/store/theme/theme_store.g.dart';
+part '../../../../../generated/src/presentation/home/store/theme/theme_store.g.dart';
 
 class ThemeStore = _ThemeStore with _$ThemeStore;
 

@@ -3,7 +3,7 @@ targets:
     builders:
       auto_route_generator:auto_router_generator:
         generate_for:
-          - lib/src/utils/app_router.dart
+          - lib/src/utils/router/app_router.dart
       auto_route_generator:auto_route_generator:
         generate_for:
           - lib/src/presentation/**_screen.dart

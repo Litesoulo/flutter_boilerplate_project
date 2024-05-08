@@ -7,7 +7,7 @@ import '../../../domain/usecase/user/is_logged_in_usecase.dart';
 import '../../../domain/usecase/user/login_usecase.dart';
 import '../../../domain/usecase/user/save_login_in_status_usecase.dart';
 
-part '../../../generated/presentation/login/store/login_store.g.dart';
+part '../../../../generated/src/presentation/login/store/login_store.g.dart';
 
 class UserStore = _UserStore with _$UserStore;
 

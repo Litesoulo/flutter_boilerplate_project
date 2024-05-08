@@ -3,9 +3,9 @@ import 'package:mobx/mobx.dart';
 
 import '../../../../core/stores/error/error_store.dart';
 import '../../../../domain/repository/setting/setting_repository.dart';
-import '../../../../generated/strings.g.dart';
+import '../../../../../generated/strings.g.dart';
 
-part '../../../../generated/presentation/home/store/language/language_store.g.dart';
+part '../../../../../generated/src/presentation/home/store/language/language_store.g.dart';
 
 class LanguageStore = _LanguageStore with _$LanguageStore;
 
