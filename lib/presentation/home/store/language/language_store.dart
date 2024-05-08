@@ -1,15 +1,15 @@
-import 'package:boilerplate/core/stores/error/error_store.dart';
-import 'package:boilerplate/domain/entity/language/Language.dart';
-import 'package:boilerplate/domain/repository/setting/setting_repository.dart';
+import 'package:flutter/material.dart';
 import 'package:mobx/mobx.dart';
 
-part 'language_store.g.dart';
+import '../../../../core/stores/error/error_store.dart';
+import '../../../../domain/repository/setting/setting_repository.dart';
+import '../../../../generated/strings.g.dart';
+
+part '../../../../generated/presentation/home/store/language/language_store.g.dart';
 
 class LanguageStore = _LanguageStore with _$LanguageStore;
 
 abstract class _LanguageStore with Store {
-  static const String TAG = "LanguageStore";
-
   // repository instance
   final SettingRepository _repository;
 
@@ -17,11 +17,7 @@ abstract class _LanguageStore with Store {
   final ErrorStore errorStore;
 
   // supported languages
-  List<Language> supportedLanguages = [
-    Language(code: 'US', locale: 'en', language: 'English'),
-    Language(code: 'DK', locale: 'da', language: 'Danish'),
-    Language(code: 'ES', locale: 'es', language: 'España'),
-  ];
+  List<Locale> supportedLanguages = AppLocaleUtils.supportedLocales;
 
   // constructor:---------------------------------------------------------------
   _LanguageStore(this._repository, this.errorStore) {
@@ -60,10 +56,14 @@ abstract class _LanguageStore with Store {
   }
 
   @action
-  String? getLanguage() {
-    return supportedLanguages[supportedLanguages
-            .indexWhere((language) => language.locale == _locale)]
-        .language;
+  String getLanguage() {
+    final index = supportedLanguages.indexWhere((language) => language.languageCode == _locale);
+
+    if (index != -1) {
+      return supportedLanguages[index].languageCode;
+    } else {
+      return supportedLanguages.first.languageCode;
+    }
   }
 
   // general:-------------------------------------------------------------------

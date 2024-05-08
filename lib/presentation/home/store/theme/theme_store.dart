@@ -1,15 +1,14 @@
-import 'package:boilerplate/core/stores/error/error_store.dart';
-import 'package:boilerplate/domain/repository/setting/setting_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:mobx/mobx.dart';
 
-part 'theme_store.g.dart';
+import '../../../../core/stores/error/error_store.dart';
+import '../../../../domain/repository/setting/setting_repository.dart';
+
+part '../../../../generated/presentation/home/store/theme/theme_store.g.dart';
 
 class ThemeStore = _ThemeStore with _$ThemeStore;
 
 abstract class _ThemeStore with Store {
-  final String TAG = "_ThemeStore";
-
   // repository instance
   final SettingRepository _repository;
 
@@ -40,8 +39,7 @@ abstract class _ThemeStore with Store {
     _darkMode = _repository.isDarkMode;
   }
 
-  bool isPlatformDark(BuildContext context) =>
-      MediaQuery.platformBrightnessOf(context) == Brightness.dark;
+  bool isPlatformDark(BuildContext context) => MediaQuery.platformBrightnessOf(context) == Brightness.dark;
 
   // dispose:-------------------------------------------------------------------
   @override

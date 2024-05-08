@@ -5,7 +5,6 @@ part 'error_store.g.dart';
 class ErrorStore = _ErrorStore with _$ErrorStore;
 
 abstract class _ErrorStore with Store {
-
   // disposers
   late List<ReactionDisposer> _disposers;
 
@@ -19,7 +18,6 @@ abstract class _ErrorStore with Store {
   // store variables:-----------------------------------------------------------
   @observable
   String errorMessage = '';
-
 
   // actions:-------------------------------------------------------------------
   @action

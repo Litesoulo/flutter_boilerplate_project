@@ -1,0 +1,71 @@
+targets:
+  $default:
+    builders:
+      auto_route_generator:auto_router_generator:
+        generate_for:
+          - lib/src/utils/app_router.dart
+      auto_route_generator:auto_route_generator:
+        generate_for:
+          - lib/src/presentation/**_screen.dart
+      source_gen|combining_builder:
+        options:
+          build_extensions:
+            '^lib/{{}}.dart': 'lib/generated/{{}}.g.dart'
+      json_serializable:
+        enabled: true
+        generate_for:
+          - lib/**.dart
+        options:
+          any_map: false
+          checked: false
+          constructor: ""
+          create_factory: true
+          create_field_map: false
+          create_to_json: true
+          disallow_unrecognized_keys: false
+          explicit_to_json: false
+          field_rename: none
+          generic_argument_factories: false
+          ignore_unannotated: false
+          include_if_null: true
+      freezed:
+        enabled: true
+        generate_for:
+          - lib/**.dart
+        options:
+          build_extensions:
+            '^lib/{{}}.dart': 'lib/generated/{{}}.freezed.dart'
+          generic_argument_factories: true
+          copy_with: true
+          equal: true
+          map:
+            map: true
+            map_or_null: false
+            maybe_map: false
+          when:
+            when: false
+            when_or_null: false
+            maybe_when: false
+      slang_build_runner:
+        options:
+          base_locale: ru
+          translate_var: translations
+          fallback_strategy: base_locale
+          input_directory: assets/translations/
+          output_directory: lib/generated/
+
+builders:
+  freezed:
+    import: "package:freezed/builder.dart"
+    builder_factories: ["freezed"]
+    build_extensions: { ".dart": [".freezed.dart"] }
+    auto_apply: dependents
+    build_to: source
+    runs_before: ["json_serializable"]
+
+  json_serializable:
+    import: "package:json_serializable/builder.dart"
+    builder_factories: ["jsonSerializable"]
+    build_extensions: {".dart": ["json_serializable.g.part"]}
+    auto_apply: dependents
+    build_to: cache

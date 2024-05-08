@@ -1,8 +1,9 @@
-import 'package:boilerplate/core/data/local/sembast/sembast_client.dart';
-import 'package:boilerplate/data/local/constants/db_constants.dart';
-import 'package:boilerplate/domain/entity/post/post.dart';
-import 'package:boilerplate/domain/entity/post/post_list.dart';
 import 'package:sembast/sembast.dart';
+
+import '../../../../core/data/local/sembast/sembast_client.dart';
+import '../../../../domain/entity/post/post.dart';
+import '../../../../domain/entity/post/post_list.dart';
+import '../../constants/db_constants.dart';
 
 class PostDataSource {
   // A Store with int keys and Map<String, dynamic> values.

@@ -1,10 +1,10 @@
 import 'package:another_flushbar/flushbar_helper.dart';
-import 'package:boilerplate/core/widgets/progress_indicator_widget.dart';
-import 'package:boilerplate/di/service_locator.dart';
-import 'package:boilerplate/presentation/post/store/post_store.dart';
-import 'package:boilerplate/utils/locale/app_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
+
+import '../../core/widgets/progress_indicator_widget.dart';
+import '../../di/service_locator.dart';
+import 'store/post_store.dart';
 
 class PostListScreen extends StatefulWidget {
   @override
@@ -63,7 +63,8 @@ class _PostListScreenState extends State<PostListScreen> {
           )
         : Center(
             child: Text(
-              AppLocalizations.of(context).translate('home_tv_no_post_found'),
+              // AppLocalizations.of(context).translate('home_tv_no_post_found'),
+              '',
             ),
           );
   }
@@ -106,7 +107,7 @@ class _PostListScreenState extends State<PostListScreen> {
       if (message.isNotEmpty) {
         FlushbarHelper.createError(
           message: message,
-          title: AppLocalizations.of(context).translate('home_tv_error'),
+          // title: AppLocalizations.of(context).translate('home_tv_error'),
           duration: Duration(seconds: 3),
         )..show(context);
       }

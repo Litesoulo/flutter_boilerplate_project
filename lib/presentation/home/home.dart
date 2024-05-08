@@ -1,14 +1,14 @@
-import 'package:boilerplate/data/sharedpref/constants/preferences.dart';
-import 'package:boilerplate/di/service_locator.dart';
-import 'package:boilerplate/presentation/home/store/language/language_store.dart';
-import 'package:boilerplate/presentation/home/store/theme/theme_store.dart';
-import 'package:boilerplate/presentation/post/post_list.dart';
-import 'package:boilerplate/utils/locale/app_localization.dart';
-import 'package:boilerplate/utils/routes/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:material_dialog/material_dialog.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+
+import '../../data/sharedpref/constants/preferences.dart';
+import '../../di/service_locator.dart';
+import '../../utils/routes/routes.dart';
+import '../post/post_list.dart';
+import 'store/language/language_store.dart';
+import 'store/theme/theme_store.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -31,7 +31,7 @@ class _HomeScreenState extends State<HomeScreen> {
   // app bar methods:-----------------------------------------------------------
   PreferredSizeWidget _buildAppBar() {
     return AppBar(
-      title: Text(AppLocalizations.of(context).translate('home_tv_posts')),
+      // title: Text(AppLocalizations.of(context).translate('home_tv_posts')),
       actions: _buildActions(context),
     );
   }
@@ -63,7 +63,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return IconButton(
       onPressed: () {
         SharedPreferences.getInstance().then((preference) {
-          preference.setBool(Preferences.is_logged_in, false);
+          preference.setBool(Preferences.isLoggedIn, false);
           Navigator.of(context).pushReplacementNamed(Routes.login);
         });
       },
@@ -91,7 +91,8 @@ class _HomeScreenState extends State<HomeScreen> {
         borderRadius: 5.0,
         enableFullWidth: true,
         title: Text(
-          AppLocalizations.of(context).translate('home_tv_choose_language'),
+          // AppLocalizations.of(context).translate('home_tv_choose_language'),
+          '',
           style: TextStyle(
             color: Colors.white,
             fontSize: 16.0,
@@ -111,9 +112,9 @@ class _HomeScreenState extends State<HomeScreen> {
                 dense: true,
                 contentPadding: EdgeInsets.all(0.0),
                 title: Text(
-                  object.language!,
+                  object.languageCode,
                   style: TextStyle(
-                    color: _languageStore.locale == object.locale
+                    color: _languageStore.locale == object.languageCode
                         ? Theme.of(context).primaryColor
                         : _themeStore.darkMode
                             ? Colors.white
@@ -123,7 +124,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 onTap: () {
                   Navigator.of(context).pop();
                   // change user language based on selected locale
-                  _languageStore.changeLanguage(object.locale!);
+                  _languageStore.changeLanguage(object.languageCode);
                 },
               ),
             )

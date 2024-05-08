@@ -1,4 +1,4 @@
-import 'package:boilerplate/domain/entity/post/post.dart';
+import 'post.dart';
 
 class PostList {
   final List<Post>? posts;

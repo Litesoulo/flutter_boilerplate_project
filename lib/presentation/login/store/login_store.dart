@@ -1,13 +1,13 @@
-import 'package:boilerplate/core/stores/error/error_store.dart';
-import 'package:boilerplate/core/stores/form/form_store.dart';
-import 'package:boilerplate/domain/usecase/user/is_logged_in_usecase.dart';
-import 'package:boilerplate/domain/usecase/user/save_login_in_status_usecase.dart';
 import 'package:mobx/mobx.dart';
 
+import '../../../core/stores/error/error_store.dart';
+import '../../../core/stores/form/form_store.dart';
 import '../../../domain/entity/user/user.dart';
+import '../../../domain/usecase/user/is_logged_in_usecase.dart';
 import '../../../domain/usecase/user/login_usecase.dart';
+import '../../../domain/usecase/user/save_login_in_status_usecase.dart';
 
-part 'login_store.g.dart';
+part '../../../generated/presentation/login/store/login_store.g.dart';
 
 class UserStore = _UserStore with _$UserStore;
 
@@ -51,8 +51,7 @@ abstract class _UserStore with Store {
   }
 
   // empty responses:-----------------------------------------------------------
-  static ObservableFuture<User?> emptyLoginResponse =
-      ObservableFuture.value(null);
+  static ObservableFuture<User?> emptyLoginResponse = ObservableFuture.value(null);
 
   // store variables:-----------------------------------------------------------
   bool isLoggedIn = false;
@@ -69,8 +68,7 @@ abstract class _UserStore with Store {
   // actions:-------------------------------------------------------------------
   @action
   Future login(String email, String password) async {
-    final LoginParams loginParams =
-        LoginParams(username: email, password: password);
+    final LoginParams loginParams = LoginParams(username: email, password: password);
     final future = _loginUseCase.call(params: loginParams);
     loginFuture = ObservableFuture(future);
 

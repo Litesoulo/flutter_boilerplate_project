@@ -1,9 +1,10 @@
-import 'package:boilerplate/core/data/local/encryption/xxtea.dart';
 import 'package:flutter/foundation.dart';
 import 'package:path/path.dart';
 import 'package:sembast/sembast.dart';
 import 'package:sembast/sembast_io.dart';
 import 'package:sembast_web/sembast_web.dart';
+
+import '../encryption/xxtea.dart';
 
 class SembastClient {
   final Database _database;

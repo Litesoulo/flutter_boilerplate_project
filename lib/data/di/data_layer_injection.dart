@@ -1,6 +1,6 @@
-import 'package:boilerplate/data/di/module/local_module.dart';
-import 'package:boilerplate/data/di/module/network_module.dart';
-import 'package:boilerplate/data/di/module/repository_module.dart';
+import 'module/local_module.dart';
+import 'module/network_module.dart';
+import 'module/repository_module.dart';
 
 mixin DataLayerInjection {
   static Future<void> configureDataLayerInjection() async {

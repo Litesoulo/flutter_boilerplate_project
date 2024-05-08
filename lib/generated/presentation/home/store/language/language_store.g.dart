@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'language_store.dart';
+part of '../../../../../presentation/home/store/language/language_store.dart';
 
 // **************************************************************************
 // StoreGenerator
@@ -58,7 +58,7 @@ mixin _$LanguageStore on _LanguageStore, Store {
   }
 
   @override
-  String? getLanguage() {
+  String getLanguage() {
     final _$actionInfo = _$_LanguageStoreActionController.startAction(
         name: '_LanguageStore.getLanguage');
     try {
