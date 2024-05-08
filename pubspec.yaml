@@ -32,9 +32,9 @@ dependencies:
   flutter_mobx: ^2.0.6+5
   # G
   get_it: ^7.2.0
-  google_fonts: ^4.0.3
+  google_fonts: ^6.2.1
   # H
-  http: ^0.13.5
+  http: ^1.2.1
   # I
   intl: ^0.18.0
   # J
@@ -79,7 +79,7 @@ dev_dependencies:
   flutter_launcher_icons: ^0.13.1
   mobx_codegen: ^2.2.0
   build_runner: ^2.3.3
-  analyzer: ^5.10.0
+  analyzer: ^6.4.1
 
 flutter_icons:
   image_path: "assets/icons/ic_launcher.png"
