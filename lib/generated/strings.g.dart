@@ -4,9 +4,9 @@
 /// To regenerate, run: `dart run slang`
 ///
 /// Locales: 1
-/// Strings: 13
+/// Strings: 4
 ///
-/// Built on 2024-05-09 at 08:10 UTC
+/// Built on 2024-05-09 at 18:18 UTC
 
 // coverage:ignore-file
 // ignore_for_file: type=lint
@@ -147,19 +147,20 @@ class Translations implements BaseTranslations<AppLocale, Translations> {
 	late final Translations _root = this; // ignore: unused_field
 
 	// Translations
-	String get login_start => 'Below are list of strings for login';
-	String get login_et_user_email => 'Enter user email';
-	String get login_et_user_password => 'Enter password';
-	String get login_btn_forgot_password => 'Forgot Password?';
-	String get login_btn_sign_in => 'Sign In';
-	String get login_error_fill_fields => 'Please fill in all fields';
-	String get login_end => '------------------------------------------------------------------------------------';
-	String get home_start => 'Below are list of strings for home';
-	String get home_tv_posts => 'Posts';
-	String get home_tv_error => 'Error';
-	String get home_tv_no_post_found => 'No posts found';
-	String get home_tv_choose_language => 'Choose Language';
-	String get home_end => '-------------------------------------------------------------------------------------';
+	late final _StringsLoginScreenRu loginScreen = _StringsLoginScreenRu._(_root);
+}
+
+// Path: loginScreen
+class _StringsLoginScreenRu {
+	_StringsLoginScreenRu._(this._root);
+
+	final Translations _root; // ignore: unused_field
+
+	// Translations
+	String get enterEmail => 'Enter user email';
+	String get enterPassword => 'Enter password';
+	String get forgotPassword => 'Forgot Password?';
+	String get signIn => 'Sign In';
 }
 
 /// Flat map(s) containing all translations.
@@ -168,19 +169,10 @@ class Translations implements BaseTranslations<AppLocale, Translations> {
 extension on Translations {
 	dynamic _flatMapFunction(String path) {
 		switch (path) {
-			case 'login_start': return 'Below are list of strings for login';
-			case 'login_et_user_email': return 'Enter user email';
-			case 'login_et_user_password': return 'Enter password';
-			case 'login_btn_forgot_password': return 'Forgot Password?';
-			case 'login_btn_sign_in': return 'Sign In';
-			case 'login_error_fill_fields': return 'Please fill in all fields';
-			case 'login_end': return '------------------------------------------------------------------------------------';
-			case 'home_start': return 'Below are list of strings for home';
-			case 'home_tv_posts': return 'Posts';
-			case 'home_tv_error': return 'Error';
-			case 'home_tv_no_post_found': return 'No posts found';
-			case 'home_tv_choose_language': return 'Choose Language';
-			case 'home_end': return '-------------------------------------------------------------------------------------';
+			case 'loginScreen.enterEmail': return 'Enter user email';
+			case 'loginScreen.enterPassword': return 'Enter password';
+			case 'loginScreen.forgotPassword': return 'Forgot Password?';
+			case 'loginScreen.signIn': return 'Sign In';
 			default: return null;
 		}
 	}
