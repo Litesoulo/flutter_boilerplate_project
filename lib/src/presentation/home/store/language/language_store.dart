@@ -26,7 +26,7 @@ abstract class _LanguageStore with Store {
 
   // store variables:-----------------------------------------------------------
   @observable
-  String _locale = "en";
+  String _locale = 'en';
 
   @computed
   String get locale => _locale;
@@ -42,17 +42,17 @@ abstract class _LanguageStore with Store {
 
   @action
   String getCode() {
-    var code;
+    String? code;
 
     if (_locale == 'en') {
-      code = "US";
+      code = 'US';
     } else if (_locale == 'da') {
-      code = "DK";
+      code = 'DK';
     } else if (_locale == 'es') {
-      code = "ES";
+      code = 'ES';
     }
 
-    return code;
+    return code ?? 'en';
   }
 
   @action

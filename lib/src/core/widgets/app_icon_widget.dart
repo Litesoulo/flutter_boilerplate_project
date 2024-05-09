@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class AppIconWidget extends StatelessWidget {
-  final image;
+  final String? image;
 
   const AppIconWidget({
     Key? key,
@@ -22,7 +22,7 @@ class AppIconWidget extends StatelessWidget {
     }
 
     return Image.asset(
-      image,
+      image ?? '',
       height: imageSize,
     );
   }

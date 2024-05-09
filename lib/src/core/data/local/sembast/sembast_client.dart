@@ -24,19 +24,19 @@ class SembastClient {
     // Check to see if encryption is set, then provide codec
     // else init normal db with path
     // Database database;
-    final database;
+    final Database database;
     if (encryptionKey.isNotEmpty) {
       var codec = getXXTeaCodec(password: encryptionKey);
 
       // Initialize the encryption codec with a user password
-      if(kIsWeb) {
+      if (kIsWeb) {
         var factory = databaseFactoryWeb;
         database = await factory.openDatabase(databaseName, codec: codec);
       } else {
         database = await databaseFactoryIo.openDatabase(dbPath, codec: codec);
       }
     } else {
-      if(kIsWeb) {
+      if (kIsWeb) {
         var factory = databaseFactoryWeb;
         database = await factory.openDatabase(databaseName);
       } else {

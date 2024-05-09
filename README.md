@@ -12,6 +12,23 @@ A boilerplate project created in flutter using MobX and Provider. Boilerplate su
 
 The Boilerplate contains the minimal implementation required to create a new library or project. The repository code is preloaded with some basic components like basic app architecture, app theme, constants and required dependencies to create a new project. By using boiler plate code as standard initializer, we can have same patterns in all the projects that will inherit it. This will also help in reducing setup & development time by allowing you to use same code pattern and avoid re-writing from scratch.
 
+## TODO for starter project
+
+***1:***
+
+Generate assets using flutter_gen package:
+1) Images;
+2) Fonts;
+3) Colors;
+
+***2:***
+
+Remove use_cases
+
+***3:***
+
+Remove deprecated_member_use warnings
+
 ## How to Use 
 
 **Step 1:**

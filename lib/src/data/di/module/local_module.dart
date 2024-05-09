@@ -25,7 +25,7 @@ mixin LocalModule {
       () async => SembastClient.provideDatabase(
         databaseName: DBConstants.DB_NAME,
         databasePath: kIsWeb
-            ? "/assets/db"
+            ? '/assets/db'
             : (await getApplicationDocumentsDirectory()).path,
       ),
     );

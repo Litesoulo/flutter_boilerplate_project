@@ -28,7 +28,7 @@ class RoundedButtonWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialButton(
       height: height,
-      key: this.key,
+      key: key,
       color: buttonColor,
       shape: borderColor != null
           ? StadiumBorder(side: BorderSide(color: borderColor!))
@@ -42,8 +42,8 @@ class RoundedButtonWidget extends StatelessWidget {
                   imagePath!,
                   height: 15.0,
                 )
-              : SizedBox.shrink(),
-          SizedBox(width: 5.0),
+              : const SizedBox.shrink(),
+          const SizedBox(width: 5.0),
           Text(
             buttonText!,
             overflow: TextOverflow.clip,

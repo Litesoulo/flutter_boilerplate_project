@@ -28,17 +28,17 @@ class TextFieldWidget extends StatelessWidget {
         onChanged: onChanged,
         autofocus: autoFocus,
         textInputAction: inputAction,
-        obscureText: this.isObscure,
+        obscureText: isObscure,
         maxLength: 25,
-        keyboardType: this.inputType,
+        keyboardType: inputType,
         style: Theme.of(context).textTheme.bodyText1,
         decoration: InputDecoration(
-            hintText: this.hint,
+            hintText: hint,
             hintStyle:
                 Theme.of(context).textTheme.bodyText1!.copyWith(color: hintColor),
             errorText: errorText,
             counterText: '',
-            icon: this.isIcon ? Icon(this.icon, color: iconColor) : null),
+            icon: isIcon ? Icon(icon, color: iconColor) : null),
       ),
     );
   }

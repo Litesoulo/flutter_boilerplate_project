@@ -28,7 +28,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: _buildAppBar(),
-      body: PostListScreen(),
+      body: const PostListScreen(),
     );
   }
 
@@ -71,7 +71,7 @@ class _HomeScreenState extends State<HomeScreen> {
           context.replaceRoute(const LoginRoute());
         });
       },
-      icon: Icon(
+      icon: const Icon(
         Icons.power_settings_new,
       ),
     );
@@ -82,7 +82,7 @@ class _HomeScreenState extends State<HomeScreen> {
       onPressed: () {
         _buildLanguageDialog();
       },
-      icon: Icon(
+      icon: const Icon(
         Icons.language,
       ),
     );
@@ -94,7 +94,7 @@ class _HomeScreenState extends State<HomeScreen> {
       child: MaterialDialog(
         borderRadius: 5.0,
         enableFullWidth: true,
-        title: Text(
+        title: const Text(
           // AppLocalizations.of(context).translate('home_tv_choose_language'),
           '',
           style: TextStyle(
@@ -114,7 +114,7 @@ class _HomeScreenState extends State<HomeScreen> {
             .map(
               (object) => ListTile(
                 dense: true,
-                contentPadding: EdgeInsets.all(0.0),
+                contentPadding: const EdgeInsets.all(0.0),
                 title: Text(
                   object.languageCode,
                   style: TextStyle(
