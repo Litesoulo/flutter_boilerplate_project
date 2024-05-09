@@ -1,4 +1,5 @@
 import 'package:another_flushbar/flushbar_helper.dart';
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -13,13 +14,16 @@ import '../../core/widgets/textfield_widget.dart';
 import '../../data/sharedpref/constants/preferences.dart';
 import '../../di/service_locator.dart';
 import '../../utils/device/device_utils.dart';
-import '../../utils/router/routes.dart';
+import '../../utils/router/app_router.dart';
 import '../home/store/theme/theme_store.dart';
 import 'store/login_store.dart';
 
+@RoutePage()
 class LoginScreen extends StatefulWidget {
+  const LoginScreen({super.key});
+
   @override
-  _LoginScreenState createState() => _LoginScreenState();
+  State<LoginScreen> createState() => _LoginScreenState();
 }
 
 class _LoginScreenState extends State<LoginScreen> {
@@ -197,7 +201,7 @@ class _LoginScreenState extends State<LoginScreen> {
     });
 
     Future.delayed(Duration(milliseconds: 0), () {
-      Navigator.of(context).pushNamedAndRemoveUntil(Routes.home, (Route<dynamic> route) => false);
+      context.navigateTo(const HomeRoute());
     });
 
     return Container();

@@ -2,34 +2,34 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 
+import '../../generated/strings.g.dart';
 import '../constants/app_theme.dart';
 import '../di/service_locator.dart';
-import '../../generated/strings.g.dart';
-import '../utils/router/routes.dart';
-import 'home/store/language/language_store.dart';
+import '../utils/router/app_router.dart';
 import 'home/store/theme/theme_store.dart';
 
-class MyApp extends StatelessWidget {
+class Application extends StatelessWidget {
   // This widget is the root of your application.
   // Create your store as a final variable in a base Widget. This works better
   // with Hot Reload than creating it directly in the `build` function.
-  MyApp({super.key});
+  Application({super.key});
 
   final ThemeStore _themeStore = getIt<ThemeStore>();
-  final LanguageStore _languageStore = getIt<LanguageStore>();
+  // final LanguageStore _languageStore = getIt<LanguageStore>();
   // final UserStore _userStore = getIt<UserStore>();
+  final AppRouter _appRouter = getIt<AppRouter>();
 
   @override
   Widget build(BuildContext context) {
     return Observer(
       builder: (context) {
         return TranslationProvider(
-          child: MaterialApp(
+          child: MaterialApp.router(
             debugShowCheckedModeBanner: false,
             theme: _themeStore.darkMode ? AppThemeData.darkThemeData : AppThemeData.lightThemeData,
 
             // TODO ADD AUTO_ROUTE
-            routes: Routes.routes,
+            routerConfig: _appRouter.config(),
             // home: _userStore.isLoggedIn ? HomeScreen() : LoginScreen(),
 
             // TODO ADD SLANG

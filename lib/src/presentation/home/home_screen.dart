@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:material_dialog/material_dialog.dart';
@@ -5,12 +6,15 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../data/sharedpref/constants/preferences.dart';
 import '../../di/service_locator.dart';
-import '../../utils/router/routes.dart';
+import '../../utils/router/app_router.dart';
 import '../post/post_list.dart';
 import 'store/language/language_store.dart';
 import 'store/theme/theme_store.dart';
 
+@RoutePage()
 class HomeScreen extends StatefulWidget {
+  const HomeScreen({super.key});
+
   @override
   State<HomeScreen> createState() => _HomeScreenState();
 }
@@ -64,7 +68,7 @@ class _HomeScreenState extends State<HomeScreen> {
       onPressed: () {
         SharedPreferences.getInstance().then((preference) {
           preference.setBool(Preferences.isLoggedIn, false);
-          Navigator.of(context).pushReplacementNamed(Routes.login);
+          context.replaceRoute(const LoginRoute());
         });
       },
       icon: Icon(

@@ -1,5 +1,7 @@
 import 'dart:async';
 
+import '../../../utils/router/app_router.dart';
+
 import '../../../core/stores/error/error_store.dart';
 import '../../../core/stores/form/form_store.dart';
 import '../../../di/service_locator.dart';
@@ -15,6 +17,11 @@ import '../../post/store/post_store.dart';
 
 mixin StoreModule {
   static Future<void> configureStoreModuleInjection() async {
+    // router:------------------------------------------------------------------
+    getIt.registerSingleton<AppRouter>(
+      AppRouter(),
+    );
+
     // factories:---------------------------------------------------------------
     getIt.registerFactory(() => ErrorStore());
     getIt.registerFactory(() => FormErrorStore());
