@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'login_usecase.dart';
+part of '../../../../../src/domain/usecase/user/login_usecase.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator

@@ -1,6 +1,6 @@
 import 'package:mobx/mobx.dart';
 
-part 'error_store.g.dart';
+part '../../../../generated/src/core/stores/error/error_store.g.dart';
 
 class ErrorStore = _ErrorStore with _$ErrorStore;
 

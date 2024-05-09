@@ -3,7 +3,7 @@ import 'package:validators/validators.dart';
 
 import '../error/error_store.dart';
 
-part 'form_store.g.dart';
+part '../../../../generated/src/core/stores/form/form_store.g.dart';
 
 class FormStore = _FormStore with _$FormStore;
 
@@ -43,19 +43,14 @@ abstract class _FormStore with Store {
   bool success = false;
 
   @computed
-  bool get canLogin =>
-      !formErrorStore.hasErrorsInLogin && userEmail.isNotEmpty && password.isNotEmpty;
+  bool get canLogin => !formErrorStore.hasErrorsInLogin && userEmail.isNotEmpty && password.isNotEmpty;
 
   @computed
   bool get canRegister =>
-      !formErrorStore.hasErrorsInRegister &&
-      userEmail.isNotEmpty &&
-      password.isNotEmpty &&
-      confirmPassword.isNotEmpty;
+      !formErrorStore.hasErrorsInRegister && userEmail.isNotEmpty && password.isNotEmpty && confirmPassword.isNotEmpty;
 
   @computed
-  bool get canForgetPassword =>
-      !formErrorStore.hasErrorInForgotPassword && userEmail.isNotEmpty;
+  bool get canForgetPassword => !formErrorStore.hasErrorInForgotPassword && userEmail.isNotEmpty;
 
   // actions:-------------------------------------------------------------------
   @action
@@ -135,8 +130,7 @@ abstract class _FormErrorStore with Store {
   bool get hasErrorsInLogin => userEmail != null || password != null;
 
   @computed
-  bool get hasErrorsInRegister =>
-      userEmail != null || password != null || confirmPassword != null;
+  bool get hasErrorsInRegister => userEmail != null || password != null || confirmPassword != null;
 
   @computed
   bool get hasErrorInForgotPassword => userEmail != null;

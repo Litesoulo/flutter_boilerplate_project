@@ -1,7 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
-import 'package:material_dialog/material_dialog.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../data/sharedpref/constants/preferences.dart';
@@ -80,7 +79,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget _buildLanguageButton() {
     return IconButton(
       onPressed: () {
-        _buildLanguageDialog();
+        _buildLanguageDialog(context);
       },
       icon: const Icon(
         Icons.language,
@@ -88,52 +87,53 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  _buildLanguageDialog() {
-    _showDialog<String>(
+  void _buildLanguageDialog(BuildContext context) {
+    showDialog<String>(
       context: context,
-      child: MaterialDialog(
-        borderRadius: 5.0,
-        enableFullWidth: true,
-        title: const Text(
-          // AppLocalizations.of(context).translate('home_tv_choose_language'),
-          '',
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: 16.0,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: const Text(
+            '', // Your title text here
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 16.0,
+            ),
           ),
-        ),
-        headerColor: Theme.of(context).primaryColor,
-        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
-        closeButtonColor: Colors.white,
-        enableCloseButton: true,
-        enableBackButton: false,
-        onCloseButtonClicked: () {
-          Navigator.of(context).pop();
-        },
-        children: _languageStore.supportedLanguages
-            .map(
-              (object) => ListTile(
-                dense: true,
-                contentPadding: const EdgeInsets.all(0.0),
-                title: Text(
-                  object.languageCode,
-                  style: TextStyle(
-                    color: _languageStore.locale == object.languageCode
-                        ? Theme.of(context).primaryColor
-                        : _themeStore.darkMode
-                            ? Colors.white
-                            : Colors.black,
-                  ),
-                ),
-                onTap: () {
-                  Navigator.of(context).pop();
-                  // change user language based on selected locale
-                  _languageStore.changeLanguage(object.languageCode);
-                },
-              ),
-            )
-            .toList(),
-      ),
+          backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+          content: SingleChildScrollView(
+            child: ListBody(
+              children: _languageStore.supportedLanguages
+                  .map((object) => ListTile(
+                        dense: true,
+                        title: Text(
+                          object.languageCode,
+                          style: TextStyle(
+                            color: _languageStore.locale == object.languageCode
+                                ? Theme.of(context).primaryColor
+                                : _themeStore.darkMode
+                                    ? Colors.white
+                                    : Colors.black,
+                          ),
+                        ),
+                        onTap: () {
+                          Navigator.of(context).pop();
+                          // change user language based on selected locale
+                          _languageStore.changeLanguage(object.languageCode);
+                        },
+                      ))
+                  .toList(),
+            ),
+          ),
+          actions: <Widget>[
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              child: Text('Close'),
+            ),
+          ],
+        );
+      },
     );
   }
 

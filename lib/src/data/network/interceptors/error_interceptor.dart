@@ -1,18 +1,12 @@
 import 'package:dio/dio.dart';
-import 'package:event_bus/event_bus.dart';
 
 class ErrorInterceptor extends Interceptor {
-  final EventBus _eventBus;
-
-  ErrorInterceptor(this._eventBus);
+  ErrorInterceptor();
 
   @override
-  void onError(DioError err, ErrorInterceptorHandler handler) {
-    _eventBus.fire(
-      ErrorEvent(
-          path: err.requestOptions.path,
-          response: err.response),
-    );
+  void onError(DioException err, ErrorInterceptorHandler handler) {
+    // TODO Log error
+    print(err);
     super.onError(err, handler);
   }
 }

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'error_store.dart';
+part of '../../../../../src/core/stores/error/error_store.dart';
 
 // **************************************************************************
 // StoreGenerator
