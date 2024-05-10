@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Light Mode Colors -->
+    <color name="scaffoldBackgroundLight">#F7F6F0</color>
+    <color name="elevatedButtonBackgroundLight">#338470</color>
+    <color name="elevatedButtonForegroundLight">#FFFFFF</color>
+    <color name="textColorLight">#000000</color>
+    <color name="cardColorLight">#EDEBE2</color>
+    <color name="textFieldBackgroundLight">#FFFFFF</color>
+    <color name="textFieldHintColorLight">#80000000</color>
+    <color name="textFieldForegroundLight">#000000</color>
+    <color name="specialTextColor1Light">#F29E7D</color>
+    <color name="specialTextColor2Light">#338470</color>
+    <color name="elevatedButtonDisabledBackgroundLight">#802C5E63</color>
+    <color name="elevatedButtonDisabledForegroundLight">#338470</color>
+    <color name="notificationBadgeColorLight">#EE6451</color>
+
+    <!-- Dark Mode Colors -->
+    <color name="scaffoldBackgroundDark">#121212</color>
+    <color name="elevatedButtonBackgroundDark">#2C5E63</color>
+    <color name="elevatedButtonForegroundDark">#FFFFFF</color>
+    <color name="textColorDark">#FFFFFF</color>
+    <color name="cardColorDark">#424242</color>
+    <color name="textFieldBackgroundDark">#333333</color>
+    <color name="textFieldHintColorDark">#80FFFFFF</color>
+    <color name="textFieldForegroundDark">#FFFFFF</color>
+    <color name="specialTextColor1Dark">#FF9800</color>
+    <color name="specialTextColor2Dark">#2C5E63</color>
+    <color name="elevatedButtonDisabledBackgroundDark">#802196F3</color>
+    <color name="elevatedButtonDisabledForegroundDark">#2C5E63</color>
+    <color name="notificationBadgeColorDark">#FF5722</color>
+</resources>

@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import '../../../utils/router/app_router.dart';
+import '../../../core/config/router/app_router.dart';
 
 import '../../../core/stores/error/error_store.dart';
 import '../../../core/stores/form/form_store.dart';

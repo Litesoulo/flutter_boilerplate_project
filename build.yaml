@@ -28,24 +28,24 @@ targets:
           generic_argument_factories: false
           ignore_unannotated: false
           include_if_null: true
-      freezed:
-        enabled: true
-        generate_for:
-          - lib/**.dart
-        options:
-          build_extensions:
-            '^lib/{{}}.dart': 'lib/generated/{{}}.freezed.dart'
-          generic_argument_factories: true
-          copy_with: true
-          equal: true
-          map:
-            map: true
-            map_or_null: false
-            maybe_map: false
-          when:
-            when: false
-            when_or_null: false
-            maybe_when: false
+      # freezed:
+      #   enabled: true
+      #   generate_for:
+      #     - lib/**.dart
+      #   options:
+      #     build_extensions:
+      #       '^lib/{{}}.dart': 'lib/generated/{{}}.freezed.dart'
+      #     generic_argument_factories: true
+      #     copy_with: true
+      #     equal: true
+      #     map:
+      #       map: true
+      #       map_or_null: false
+      #       maybe_map: false
+      #     when:
+      #       when: false
+      #       when_or_null: false
+      #       maybe_when: false
       slang_build_runner:
         options:
           base_locale: ru

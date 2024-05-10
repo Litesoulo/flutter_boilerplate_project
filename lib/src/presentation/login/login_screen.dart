@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import '../../constants/assets.dart';
+import '../../../generated/assets.gen.dart';
 import '../../core/stores/form/form_store.dart';
 import '../../core/widgets/app_icon_widget.dart';
 import '../../core/widgets/empty_app_bar_widget.dart';
@@ -14,7 +14,7 @@ import '../../core/widgets/textfield_widget.dart';
 import '../../data/sharedpref/constants/preferences.dart';
 import '../../di/service_locator.dart';
 import '../../utils/device/device_utils.dart';
-import '../../utils/router/app_router.dart';
+import '../../core/config/router/app_router.dart';
 import '../home/store/theme/theme_store.dart';
 import 'store/login_store.dart';
 
@@ -93,9 +93,8 @@ class _LoginScreenState extends State<LoginScreen> {
 
   Widget _buildLeftSide() {
     return SizedBox.expand(
-      child: Image.asset(
-        Assets.carBackground,
-        fit: BoxFit.cover,
+      child: Assets.images.imgLogin.image(
+        fit: BoxFit.contain,
       ),
     );
   }

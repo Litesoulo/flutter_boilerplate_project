@@ -5,7 +5,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../data/sharedpref/constants/preferences.dart';
 import '../../di/service_locator.dart';
-import '../../utils/router/app_router.dart';
+import '../../core/config/router/app_router.dart';
 import '../post/post_list.dart';
 import 'store/language/language_store.dart';
 import 'store/theme/theme_store.dart';

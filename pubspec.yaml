@@ -24,6 +24,7 @@ dependencies:
   # E
   # F
   flutter_mobx: ^2.0.6+5
+  flutter_svg: ^2.0.10+1
   # G
   get_it: ^7.2.0
   # H
@@ -33,6 +34,7 @@ dependencies:
   json_annotation: ^4.9.0
   # K
   # L
+  lottie: ^3.1.0
   # M
   mobx: ^2.1.4
   # N
@@ -90,3 +92,15 @@ flutter:
         weight: 700
       - asset: assets/fonts/Comfortaa-Bold.ttf
         weight: 900
+
+flutter_gen:
+  output: lib/generated/
+  line_length: 120
+
+  integrations:
+    flutter_svg: true
+    lottie: true
+
+  colors:
+    inputs:
+      - assets/colors/colors.xml

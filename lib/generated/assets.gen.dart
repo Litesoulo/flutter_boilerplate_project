@@ -13,12 +13,10 @@ class $AssetsIconsGen {
   const $AssetsIconsGen();
 
   /// File path: assets/icons/ic_appicon.png
-  AssetGenImage get icAppicon =>
-      const AssetGenImage('assets/icons/ic_appicon.png');
+  AssetGenImage get icAppicon => const AssetGenImage('assets/icons/ic_appicon.png');
 
   /// File path: assets/icons/ic_launcher.png
-  AssetGenImage get icLauncher =>
-      const AssetGenImage('assets/icons/ic_launcher.png');
+  AssetGenImage get icLauncher => const AssetGenImage('assets/icons/ic_launcher.png');
 
   /// List of all assets
   List<AssetGenImage> get values => [icAppicon, icLauncher];
@@ -28,12 +26,10 @@ class $AssetsImagesGen {
   const $AssetsImagesGen();
 
   /// File path: assets/images/img_login.jpg
-  AssetGenImage get imgLogin =>
-      const AssetGenImage('assets/images/img_login.jpg');
+  AssetGenImage get imgLogin => const AssetGenImage('assets/images/img_login.jpg');
 
   /// File path: assets/images/img_no_jobs.png
-  AssetGenImage get imgNoJobs =>
-      const AssetGenImage('assets/images/img_no_jobs.png');
+  AssetGenImage get imgNoJobs => const AssetGenImage('assets/images/img_no_jobs.png');
 
   /// List of all assets
   List<AssetGenImage> get values => [imgLogin, imgNoJobs];

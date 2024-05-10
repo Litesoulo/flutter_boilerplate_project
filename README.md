@@ -17,9 +17,9 @@ The Boilerplate contains the minimal implementation required to create a new lib
 ***1:***
 
 Generate assets using flutter_gen package:
-1) Images;
-2) Fonts;
-3) Colors;
+1) Images; ++
+2) Fonts; ++
+3) Colors; 
 
 ***2:***
 

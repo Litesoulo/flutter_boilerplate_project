@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../gen/fonts.gen.dart';
+import '../../../../../generated/fonts.gen.dart';
 
 class AppThemeData {
   static const _lightFillColor = Colors.black;
@@ -73,10 +73,9 @@ class AppThemeData {
     brightness: Brightness.dark,
   );
 
-  static const _regular = FontWeight.w500;
-  static const _medium = FontWeight.w700;
-  static const _semiBold = FontWeight.w800;
-  static const _bold = FontWeight.w900;
+  // static const _regular = FontWeight.w500;
+  // static const _medium = FontWeight.w700;
+  // static const _bold = FontWeight.w900;
 
   static const TextTheme _textTheme = TextTheme();
 }

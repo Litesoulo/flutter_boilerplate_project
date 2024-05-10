@@ -3,9 +3,9 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 
 import '../../generated/strings.g.dart';
-import '../constants/app_theme.dart';
+import '../core/config/theme/app_theme.dart';
 import '../di/service_locator.dart';
-import '../utils/router/app_router.dart';
+import '../core/config/router/app_router.dart';
 import 'home/store/theme/theme_store.dart';
 
 class Application extends StatelessWidget {
