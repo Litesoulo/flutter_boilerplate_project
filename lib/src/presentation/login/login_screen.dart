@@ -32,9 +32,9 @@ class _LoginScreenState extends State<LoginScreen> {
   final TextEditingController _passwordController = TextEditingController();
 
   //stores:---------------------------------------------------------------------
-  final ThemeStore _themeStore = getIt<ThemeStore>();
-  final FormStore _formStore = getIt<FormStore>();
-  final UserStore _userStore = getIt<UserStore>();
+  final ThemeStore _themeStore = sl<ThemeStore>();
+  final FormStore _formStore = sl<FormStore>();
+  final UserStore _userStore = sl<UserStore>();
 
   //focus node:-----------------------------------------------------------------
   late FocusNode _passwordFocusNode;

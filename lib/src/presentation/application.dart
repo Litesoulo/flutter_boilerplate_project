@@ -14,38 +14,43 @@ class Application extends StatelessWidget {
   // with Hot Reload than creating it directly in the `build` function.
   Application({super.key});
 
-  final ThemeStore _themeStore = getIt<ThemeStore>();
+  final ThemeStore _themeStore = sl<ThemeStore>();
   // final LanguageStore _languageStore = getIt<LanguageStore>();
   // final UserStore _userStore = getIt<UserStore>();
-  final AppRouter _appRouter = getIt<AppRouter>();
+  final AppRouter _appRouter = sl<AppRouter>();
 
   @override
   Widget build(BuildContext context) {
     return Observer(
       builder: (context) {
         return TranslationProvider(
-          child: MaterialApp.router(
-            debugShowCheckedModeBanner: false,
-            theme: _themeStore.darkMode ? AppThemeData.darkThemeData : AppThemeData.lightThemeData,
+          child: MediaQuery(
+            data: MediaQuery.of(context).copyWith(
+              textScaler: const TextScaler.linear(1.0),
+            ),
+            child: MaterialApp.router(
+              debugShowCheckedModeBanner: false,
+              theme: _themeStore.darkMode ? AppThemeData.darkThemeData : AppThemeData.lightThemeData,
 
-            // TODO ADD AUTO_ROUTE
-            routerConfig: _appRouter.config(),
-            // home: _userStore.isLoggedIn ? HomeScreen() : LoginScreen(),
+              // TODO ADD AUTO_ROUTE
+              routerConfig: _appRouter.config(),
+              // home: _userStore.isLoggedIn ? HomeScreen() : LoginScreen(),
 
-            // TODO ADD SLANG
-            // locale: Locale(_languageStore.locale),
-            locale: TranslationProvider.of(context).flutterLocale,
-            supportedLocales: AppLocaleUtils.supportedLocales,
-            localizationsDelegates: const [
-              // A class which loads the translations from JSON files
+              // TODO ADD SLANG
+              // locale: Locale(_languageStore.locale),
+              locale: TranslationProvider.of(context).flutterLocale,
+              supportedLocales: AppLocaleUtils.supportedLocales,
+              localizationsDelegates: const [
+                // A class which loads the translations from JSON files
 
-              // Built-in localization of basic text for Material widgets
-              GlobalMaterialLocalizations.delegate,
-              // Built-in localization for text direction LTR/RTL
-              GlobalWidgetsLocalizations.delegate,
-              // Built-in localization of basic text for Cupertino widgets
-              GlobalCupertinoLocalizations.delegate,
-            ],
+                // Built-in localization of basic text for Material widgets
+                GlobalMaterialLocalizations.delegate,
+                // Built-in localization for text direction LTR/RTL
+                GlobalWidgetsLocalizations.delegate,
+                // Built-in localization of basic text for Cupertino widgets
+                GlobalCupertinoLocalizations.delegate,
+              ],
+            ),
           ),
         );
       },

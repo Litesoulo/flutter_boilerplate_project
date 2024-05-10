@@ -13,15 +13,15 @@ import '../../sharedpref/shared_preference_helper.dart';
 mixin LocalModule {
   static Future<void> configureLocalModuleInjection() async {
     // preference manager:------------------------------------------------------
-    getIt.registerSingletonAsync<SharedPreferences>(
+    sl.registerSingletonAsync<SharedPreferences>(
         SharedPreferences.getInstance);
-    getIt.registerSingleton<SharedPreferenceHelper>(
-      SharedPreferenceHelper(await getIt.getAsync<SharedPreferences>()),
+    sl.registerSingleton<SharedPreferenceHelper>(
+      SharedPreferenceHelper(await sl.getAsync<SharedPreferences>()),
     );
 
     // database:----------------------------------------------------------------
 
-    getIt.registerSingletonAsync<SembastClient>(
+    sl.registerSingletonAsync<SembastClient>(
       () async => SembastClient.provideDatabase(
         databaseName: DBConstants.DB_NAME,
         databasePath: kIsWeb
@@ -31,7 +31,7 @@ mixin LocalModule {
     );
 
     // data sources:------------------------------------------------------------
-    getIt.registerSingleton(
-        PostDataSource(await getIt.getAsync<SembastClient>()));
+    sl.registerSingleton(
+        PostDataSource(await sl.getAsync<SembastClient>()));
   }
 }

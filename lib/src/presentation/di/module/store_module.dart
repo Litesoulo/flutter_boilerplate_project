@@ -18,46 +18,46 @@ import '../../post/store/post_store.dart';
 mixin StoreModule {
   static Future<void> configureStoreModuleInjection() async {
     // router:------------------------------------------------------------------
-    getIt.registerSingleton<AppRouter>(
+    sl.registerSingleton<AppRouter>(
       AppRouter(),
     );
 
     // factories:---------------------------------------------------------------
-    getIt.registerFactory(() => ErrorStore());
-    getIt.registerFactory(() => FormErrorStore());
-    getIt.registerFactory(
-      () => FormStore(getIt<FormErrorStore>(), getIt<ErrorStore>()),
+    sl.registerFactory(() => ErrorStore());
+    sl.registerFactory(() => FormErrorStore());
+    sl.registerFactory(
+      () => FormStore(sl<FormErrorStore>(), sl<ErrorStore>()),
     );
 
     // stores:------------------------------------------------------------------
-    getIt.registerSingleton<UserStore>(
+    sl.registerSingleton<UserStore>(
       UserStore(
-        getIt<IsLoggedInUseCase>(),
-        getIt<SaveLoginStatusUseCase>(),
-        getIt<LoginUseCase>(),
-        getIt<FormErrorStore>(),
-        getIt<ErrorStore>(),
+        sl<IsLoggedInUseCase>(),
+        sl<SaveLoginStatusUseCase>(),
+        sl<LoginUseCase>(),
+        sl<FormErrorStore>(),
+        sl<ErrorStore>(),
       ),
     );
 
-    getIt.registerSingleton<PostStore>(
+    sl.registerSingleton<PostStore>(
       PostStore(
-        getIt<GetPostUseCase>(),
-        getIt<ErrorStore>(),
+        sl<GetPostUseCase>(),
+        sl<ErrorStore>(),
       ),
     );
 
-    getIt.registerSingleton<ThemeStore>(
+    sl.registerSingleton<ThemeStore>(
       ThemeStore(
-        getIt<SettingRepository>(),
-        getIt<ErrorStore>(),
+        sl<SettingRepository>(),
+        sl<ErrorStore>(),
       ),
     );
 
-    getIt.registerSingleton<LanguageStore>(
+    sl.registerSingleton<LanguageStore>(
       LanguageStore(
-        getIt<SettingRepository>(),
-        getIt<ErrorStore>(),
+        sl<SettingRepository>(),
+        sl<ErrorStore>(),
       ),
     );
   }

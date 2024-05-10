@@ -14,17 +14,17 @@ import '../../sharedpref/shared_preference_helper.dart';
 mixin RepositoryModule {
   static Future<void> configureRepositoryModuleInjection() async {
     // repository:--------------------------------------------------------------
-    getIt.registerSingleton<SettingRepository>(SettingRepositoryImpl(
-      getIt<SharedPreferenceHelper>(),
+    sl.registerSingleton<SettingRepository>(SettingRepositoryImpl(
+      sl<SharedPreferenceHelper>(),
     ));
 
-    getIt.registerSingleton<UserRepository>(UserRepositoryImpl(
-      getIt<SharedPreferenceHelper>(),
+    sl.registerSingleton<UserRepository>(UserRepositoryImpl(
+      sl<SharedPreferenceHelper>(),
     ));
 
-    getIt.registerSingleton<PostRepository>(PostRepositoryImpl(
-      getIt<PostApi>(),
-      getIt<PostDataSource>(),
+    sl.registerSingleton<PostRepository>(PostRepositoryImpl(
+      sl<PostApi>(),
+      sl<PostDataSource>(),
     ));
   }
 }

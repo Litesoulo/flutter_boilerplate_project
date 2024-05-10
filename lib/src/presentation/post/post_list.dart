@@ -15,7 +15,7 @@ class PostListScreen extends StatefulWidget {
 
 class _PostListScreenState extends State<PostListScreen> {
   //stores:---------------------------------------------------------------------
-  final PostStore _postStore = getIt<PostStore>();
+  final PostStore _postStore = sl<PostStore>();
 
   @override
   void didChangeDependencies() {

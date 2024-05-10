@@ -20,8 +20,8 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   //stores:---------------------------------------------------------------------
-  final ThemeStore _themeStore = getIt<ThemeStore>();
-  final LanguageStore _languageStore = getIt<LanguageStore>();
+  final ThemeStore _themeStore = sl<ThemeStore>();
+  final LanguageStore _languageStore = sl<LanguageStore>();
 
   @override
   Widget build(BuildContext context) {

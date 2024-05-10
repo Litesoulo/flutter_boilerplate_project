@@ -11,36 +11,36 @@ import '../../sharedpref/shared_preference_helper.dart';
 mixin NetworkModule {
   static Future<void> configureNetworkModuleInjection() async {
     // interceptors:------------------------------------------------------------
-    getIt.registerSingleton<LoggingInterceptor>(LoggingInterceptor());
-    getIt.registerSingleton<ErrorInterceptor>(ErrorInterceptor());
-    getIt.registerSingleton<AuthInterceptor>(
+    sl.registerSingleton<LoggingInterceptor>(LoggingInterceptor());
+    sl.registerSingleton<ErrorInterceptor>(ErrorInterceptor());
+    sl.registerSingleton<AuthInterceptor>(
       AuthInterceptor(
-        accessToken: () async => await getIt<SharedPreferenceHelper>().authToken,
+        accessToken: () async => await sl<SharedPreferenceHelper>().authToken,
       ),
     );
 
     // dio:---------------------------------------------------------------------
-    getIt.registerSingleton<DioConfigs>(
+    sl.registerSingleton<DioConfigs>(
       const DioConfigs(
         baseUrl: Endpoints.baseUrl,
         connectionTimeout: Endpoints.connectionTimeout,
         receiveTimeout: Endpoints.receiveTimeout,
       ),
     );
-    getIt.registerSingleton<DioClient>(
-      DioClient(dioConfigs: getIt())
+    sl.registerSingleton<DioClient>(
+      DioClient(dioConfigs: sl())
         ..addInterceptors(
           [
-            getIt<AuthInterceptor>(),
-            getIt<ErrorInterceptor>(),
-            getIt<LoggingInterceptor>(),
+            sl<AuthInterceptor>(),
+            sl<ErrorInterceptor>(),
+            sl<LoggingInterceptor>(),
           ],
         ),
     );
 
     // api's:-------------------------------------------------------------------
-    getIt.registerSingleton(
-      PostApi(getIt<DioClient>()),
+    sl.registerSingleton(
+      PostApi(sl<DioClient>()),
     );
   }
 }

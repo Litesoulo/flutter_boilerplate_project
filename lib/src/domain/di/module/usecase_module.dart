@@ -15,31 +15,31 @@ import '../../usecase/user/save_login_in_status_usecase.dart';
 mixin UseCaseModule {
   static Future<void> configureUseCaseModuleInjection() async {
     // user:--------------------------------------------------------------------
-    getIt.registerSingleton<IsLoggedInUseCase>(
-      IsLoggedInUseCase(getIt<UserRepository>()),
+    sl.registerSingleton<IsLoggedInUseCase>(
+      IsLoggedInUseCase(sl<UserRepository>()),
     );
-    getIt.registerSingleton<SaveLoginStatusUseCase>(
-      SaveLoginStatusUseCase(getIt<UserRepository>()),
+    sl.registerSingleton<SaveLoginStatusUseCase>(
+      SaveLoginStatusUseCase(sl<UserRepository>()),
     );
-    getIt.registerSingleton<LoginUseCase>(
-      LoginUseCase(getIt<UserRepository>()),
+    sl.registerSingleton<LoginUseCase>(
+      LoginUseCase(sl<UserRepository>()),
     );
 
     // post:--------------------------------------------------------------------
-    getIt.registerSingleton<GetPostUseCase>(
-      GetPostUseCase(getIt<PostRepository>()),
+    sl.registerSingleton<GetPostUseCase>(
+      GetPostUseCase(sl<PostRepository>()),
     );
-    getIt.registerSingleton<FindPostByIdUseCase>(
-      FindPostByIdUseCase(getIt<PostRepository>()),
+    sl.registerSingleton<FindPostByIdUseCase>(
+      FindPostByIdUseCase(sl<PostRepository>()),
     );
-    getIt.registerSingleton<InsertPostUseCase>(
-      InsertPostUseCase(getIt<PostRepository>()),
+    sl.registerSingleton<InsertPostUseCase>(
+      InsertPostUseCase(sl<PostRepository>()),
     );
-    getIt.registerSingleton<UpdatePostUseCase>(
-      UpdatePostUseCase(getIt<PostRepository>()),
+    sl.registerSingleton<UpdatePostUseCase>(
+      UpdatePostUseCase(sl<PostRepository>()),
     );
-    getIt.registerSingleton<DeletePostUseCase>(
-      DeletePostUseCase(getIt<PostRepository>()),
+    sl.registerSingleton<DeletePostUseCase>(
+      DeletePostUseCase(sl<PostRepository>()),
     );
   }
 }

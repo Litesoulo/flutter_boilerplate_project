@@ -19,7 +19,7 @@ The Boilerplate contains the minimal implementation required to create a new lib
 Generate assets using flutter_gen package:
 1) Images; ++
 2) Fonts; ++
-3) Colors; 
+3) Colors;  ++
 
 ***2:***
 
@@ -302,6 +302,40 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+```
+
+### Typography Guidelines
+
+This project ensures text is easy to read and visually appealing on all devices. It follows these simple rules:
+
+#### Headlines:
+Large: Bold (Font Size: fontSizeBase * 3.4)
+Medium: Bold (Font Size: fontSizeBase * 2.8)
+Small: Medium (Font Size: fontSizeBase * 2.4)
+#### Titles:
+Large: Medium (Font Size: fontSizeBase * 2.2)
+Medium: Medium (Font Size: fontSizeBase * 1.8)
+Small: Regular (Font Size: fontSizeBase * 1.6)
+#### Body Text:
+Large: Regular (Font Size: fontSizeBase * 1.6)
+Medium: Regular (Font Size: fontSizeBase * 1.4)
+Small: Regular (Font Size: fontSizeBase * 1.2)
+#### Labels:
+Large: Medium (Font Size: fontSizeBase * 1.4)
+Medium: Regular (Font Size: fontSizeBase * 1.2)
+Small: Regular (Font Size: fontSizeBase)
+
+Font sizes adjust dynamically based on the fontSizeBase calculated for each device.
+
+fontSizeBase is calculated by multiplying 10 into 1% of device's height
+
+**Example Usage:**
+
+```dart
+Text(
+  'This is a headline',
+  style: Theme.of(context).textTheme.headlineMedium,
+),
 ```
 
 ## Wiki
