@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
+import 'package:talker_flutter/talker_flutter.dart';
 
 import '../../generated/strings.g.dart';
 import '../core/config/theme/app_theme.dart';
@@ -30,10 +31,17 @@ class Application extends StatelessWidget {
             ),
             child: MaterialApp.router(
               debugShowCheckedModeBanner: false,
-              theme: _themeStore.darkMode ? AppThemeData.darkThemeData : AppThemeData.lightThemeData,
+              theme: _themeStore.darkMode
+                  ? AppThemeData.darkThemeData
+                  : AppThemeData.lightThemeData,
 
-              // TODO ADD AUTO_ROUTE
-              routerConfig: _appRouter.config(),
+              routerConfig: _appRouter.config(
+                navigatorObservers: () => [
+                  TalkerRouteObserver(
+                    sl<Talker>(),
+                  ),
+                ],
+              ),
               // home: _userStore.isLoggedIn ? HomeScreen() : LoginScreen(),
 
               // TODO ADD SLANG
@@ -41,7 +49,7 @@ class Application extends StatelessWidget {
               locale: TranslationProvider.of(context).flutterLocale,
               supportedLocales: AppLocaleUtils.supportedLocales,
               localizationsDelegates: const [
-                // A class which loads the translations from JSON files
+                // TODO ADD TK LOCALIZATION DELEGATES
 
                 // Built-in localization of basic text for Material widgets
                 GlobalMaterialLocalizations.delegate,

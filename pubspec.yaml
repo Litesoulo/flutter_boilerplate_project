@@ -20,6 +20,8 @@ dependencies:
   # C
   cupertino_icons: ^1.0.8
   # D
+  drift: ^2.18.0
+  drift_dev: ^2.18.0
   dio: ^5.4.3+1
   # E
   # F
@@ -50,7 +52,11 @@ dependencies:
   sembast: ^3.7.1
   slang: ^3.30.2
   slang_flutter: ^3.30.0
+  sqlite3_flutter_libs: ^0.5.21
+  sqlite3: ^2.4.3
   # T
+  talker_flutter: ^4.2.0
+  talker_dio_logger: ^4.2.0
   # U
   # V
   validators: ^3.0.0
@@ -71,7 +77,9 @@ dev_dependencies:
   json_serializable: ^6.8.0
   flutter_gen_runner: ^5.4.0
   mobx_codegen: ^2.2.0
-  build_runner: ^2.4.9
+  build_runner: ^2.4.10
+  build_web_compilers: ^4.0.10
+  build: ^2.4.1
   analyzer: ^6.4.1
 
 flutter:
