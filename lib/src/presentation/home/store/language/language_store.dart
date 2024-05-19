@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:mobx/mobx.dart';
 
-import '../../../../core/stores/error/error_store.dart';
-import '../../../../domain/repository/setting/setting_repository.dart';
 import '../../../../../generated/strings.g.dart';
+import '../../../../domain/repository/setting/setting_repository.dart';
 
 part '../../../../../generated/src/presentation/home/store/language/language_store.g.dart';
 
@@ -13,14 +12,11 @@ abstract class _LanguageStore with Store {
   // repository instance
   final SettingRepository _repository;
 
-  // store for handling errors
-  final ErrorStore errorStore;
-
   // supported languages
   List<Locale> supportedLanguages = AppLocaleUtils.supportedLocales;
 
   // constructor:---------------------------------------------------------------
-  _LanguageStore(this._repository, this.errorStore) {
+  _LanguageStore(this._repository) {
     init();
   }
 
@@ -57,7 +53,8 @@ abstract class _LanguageStore with Store {
 
   @action
   String getLanguage() {
-    final index = supportedLanguages.indexWhere((language) => language.languageCode == _locale);
+    final index = supportedLanguages
+        .indexWhere((language) => language.languageCode == _locale);
 
     if (index != -1) {
       return supportedLanguages[index].languageCode;

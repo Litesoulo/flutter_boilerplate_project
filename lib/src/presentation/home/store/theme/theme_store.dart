@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mobx/mobx.dart';
 
-import '../../../../core/stores/error/error_store.dart';
 import '../../../../domain/repository/setting/setting_repository.dart';
 
 part '../../../../../generated/src/presentation/home/store/theme/theme_store.g.dart';
@@ -12,9 +11,6 @@ abstract class _ThemeStore with Store {
   // repository instance
   final SettingRepository _repository;
 
-  // store for handling errors
-  final ErrorStore errorStore;
-
   // store variables:-----------------------------------------------------------
   @observable
   bool _darkMode = false;
@@ -23,7 +19,7 @@ abstract class _ThemeStore with Store {
   bool get darkMode => _darkMode;
 
   // constructor:---------------------------------------------------------------
-  _ThemeStore(this._repository, this.errorStore) {
+  _ThemeStore(this._repository) {
     init();
   }
 
@@ -39,7 +35,8 @@ abstract class _ThemeStore with Store {
     _darkMode = _repository.isDarkMode;
   }
 
-  bool isPlatformDark(BuildContext context) => MediaQuery.platformBrightnessOf(context) == Brightness.dark;
+  bool isPlatformDark(BuildContext context) =>
+      MediaQuery.platformBrightnessOf(context) == Brightness.dark;
 
   // dispose:-------------------------------------------------------------------
   dispose() {}

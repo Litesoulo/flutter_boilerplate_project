@@ -48,8 +48,6 @@ dependencies:
   # R
   # S
   shared_preferences: ^2.2.3
-  sembast_web: ^2.3.0
-  sembast: ^3.7.1
   slang: ^3.30.2
   slang_flutter: ^3.30.0
   sqlite3_flutter_libs: ^0.5.21
