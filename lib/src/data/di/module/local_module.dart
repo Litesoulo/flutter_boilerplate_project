@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../../di/service_locator.dart';
+import '../../local/drift/database.dart';
 import '../../sharedpref/shared_preference_helper.dart';
 
 mixin LocalModule {
@@ -14,9 +15,11 @@ mixin LocalModule {
     );
 
     // database:----------------------------------------------------------------
-    // TODO Register drift
+    sl.registerSingleton<AppDatabase>(
+      AppDatabase(),
+    );
 
     // data sources:------------------------------------------------------------
-    // TODO Register data sourcesP
+    // TODO Register data sources
   }
 }

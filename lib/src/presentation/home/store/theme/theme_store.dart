@@ -35,8 +35,7 @@ abstract class _ThemeStore with Store {
     _darkMode = _repository.isDarkMode;
   }
 
-  bool isPlatformDark(BuildContext context) =>
-      MediaQuery.platformBrightnessOf(context) == Brightness.dark;
+  bool isPlatformDark(BuildContext context) => MediaQuery.platformBrightnessOf(context) == Brightness.dark;
 
   // dispose:-------------------------------------------------------------------
   dispose() {}
