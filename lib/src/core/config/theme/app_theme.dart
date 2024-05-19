@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import '../../../../../generated/fonts.gen.dart';
-import '../../../di/service_locator.dart';
 import '../constants/dimens.dart';
 
 abstract final class AppThemeData {
@@ -13,7 +12,8 @@ abstract final class AppThemeData {
   static final Color _lightFocusColor = Colors.black.withOpacity(0.12);
   static final Color _darkFocusColor = Colors.white.withOpacity(0.12);
 
-  static ThemeData lightThemeData = themeData(lightColorScheme, _lightFocusColor);
+  static ThemeData lightThemeData =
+      themeData(lightColorScheme, _lightFocusColor);
   static ThemeData darkThemeData = themeData(darkColorScheme, _darkFocusColor);
 
   static ThemeData themeData(ColorScheme colorScheme, Color focusColor) {
@@ -77,53 +77,53 @@ abstract final class AppThemeData {
   static const _medium = FontWeight.w700;
   static const _bold = FontWeight.w900;
 
-  static final TextTheme _textTheme = TextTheme(
+  static const TextTheme _textTheme = TextTheme(
     headlineLarge: TextStyle(
-      fontSize: sl<Dimens>().fontSizeBase * 3.4,
+      fontSize: Dimens.fontSizeBase * 3.4,
       fontWeight: _bold, // Bold for prominent headlines
     ),
     headlineMedium: TextStyle(
-      fontSize: sl<Dimens>().fontSizeBase * 2.8,
+      fontSize: Dimens.fontSizeBase * 2.8,
       fontWeight: _bold, // Bold for subheadings
     ),
     headlineSmall: TextStyle(
-      fontSize: sl<Dimens>().fontSizeBase * 2.4,
+      fontSize: Dimens.fontSizeBase * 2.4,
       fontWeight: _medium, // Medium for smaller headings
     ),
     titleLarge: TextStyle(
-      fontSize: sl<Dimens>().fontSizeBase * 2.2,
+      fontSize: Dimens.fontSizeBase * 2.2,
       fontWeight: _medium, // Medium for section titles
     ),
     titleMedium: TextStyle(
-      fontSize: sl<Dimens>().fontSizeBase * 1.8,
+      fontSize: Dimens.fontSizeBase * 1.8,
       fontWeight: _medium, // Medium for smaller titles
     ),
     titleSmall: TextStyle(
-      fontSize: sl<Dimens>().fontSizeBase * 1.6,
+      fontSize: Dimens.fontSizeBase * 1.6,
       fontWeight: _regular, // Regular for subtle titles
     ),
     bodyLarge: TextStyle(
-      fontSize: sl<Dimens>().fontSizeBase * 1.6,
+      fontSize: Dimens.fontSizeBase * 1.6,
       fontWeight: _regular, // Regular for body text
     ),
     bodyMedium: TextStyle(
-      fontSize: sl<Dimens>().fontSizeBase * 1.4,
+      fontSize: Dimens.fontSizeBase * 1.4,
       fontWeight: _regular, // Regular for body text
     ),
     bodySmall: TextStyle(
-      fontSize: sl<Dimens>().fontSizeBase * 1.2,
+      fontSize: Dimens.fontSizeBase * 1.2,
       fontWeight: _regular, // Regular for smaller body text
     ),
     labelLarge: TextStyle(
-      fontSize: sl<Dimens>().fontSizeBase * 1.4,
+      fontSize: Dimens.fontSizeBase * 1.4,
       fontWeight: _medium, // Medium for prominent labels
     ),
     labelMedium: TextStyle(
-      fontSize: sl<Dimens>().fontSizeBase * 1.2,
+      fontSize: Dimens.fontSizeBase * 1.2,
       fontWeight: _regular, // Regular for standard labels
     ),
     labelSmall: TextStyle(
-      fontSize: sl<Dimens>().fontSizeBase,
+      fontSize: Dimens.fontSizeBase,
       fontWeight: _regular, // Regular for small labels
     ),
   );

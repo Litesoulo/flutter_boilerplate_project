@@ -1,31 +1,13 @@
-import 'package:flutter/material.dart';
+abstract final class Dimens {
+  const Dimens._();
 
-class Dimens extends InheritedWidget {
   // For all screens
-  final double horizontalPadding;
-  final double verticalPadding;
+  static const double horizontalPadding = 12;
+  static const double verticalPadding = 8;
 
   // Default border radius
-  final double defaultBorderRadius;
+  static const double defaultBorderRadius = 20;
 
   // Font size base
-  final double fontSizeBase;
-
-  const Dimens({
-    super.key,
-    this.fontSizeBase = 10.0,
-    this.horizontalPadding = 12.0,
-    this.verticalPadding = 12.0,
-    this.defaultBorderRadius = 12.0,
-    required Widget child,
-  }) : super(child: child);
-
-  static Dimens? of(BuildContext context) {
-    return context.dependOnInheritedWidgetOfExactType<Dimens>();
-  }
-
-  @override
-  bool updateShouldNotify(Dimens oldWidget) {
-    return oldWidget.fontSizeBase != fontSizeBase;
-  }
+  static const double fontSizeBase = 10;
 }
