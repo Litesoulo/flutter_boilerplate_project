@@ -21,6 +21,7 @@ dependencies:
   cupertino_icons: ^1.0.8
   # D
   drift: ^2.18.0
+  drift_dev: ^2.18.0
   dio: ^5.4.3+1
   # E
   # F
@@ -75,7 +76,6 @@ dev_dependencies:
   flutter_gen_runner: ^5.4.0
   mobx_codegen: ^2.2.0
   build_runner: ^2.4.10
-  drift_dev: ^2.18.0
   analyzer: ^6.4.1
 
 flutter:
