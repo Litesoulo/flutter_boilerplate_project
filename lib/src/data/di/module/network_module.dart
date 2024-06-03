@@ -1,7 +1,9 @@
+import 'package:flutter/foundation.dart';
+import 'package:talker_dio_logger/talker_dio_logger.dart';
+
 import '../../../core/data/network/dio/configs/dio_configs.dart';
 import '../../../core/data/network/dio/dio_client.dart';
 import '../../../core/data/network/dio/interceptors/auth_interceptor.dart';
-import '../../../core/data/network/dio/interceptors/logging_interceptor.dart';
 import '../../../di/service_locator.dart';
 import '../../network/apis/posts/post_api.dart';
 import '../../network/constants/endpoints.dart';
@@ -11,7 +13,6 @@ import '../../sharedpref/shared_preference_helper.dart';
 mixin NetworkModule {
   static Future<void> configureNetworkModuleInjection() async {
     // interceptors:------------------------------------------------------------
-    sl.registerSingleton<LoggingInterceptor>(LoggingInterceptor());
     sl.registerSingleton<ErrorInterceptor>(ErrorInterceptor());
     sl.registerSingleton<AuthInterceptor>(
       AuthInterceptor(
@@ -33,7 +34,13 @@ mixin NetworkModule {
           [
             sl<AuthInterceptor>(),
             sl<ErrorInterceptor>(),
-            sl<LoggingInterceptor>(),
+            TalkerDioLogger(
+              settings: const TalkerDioLoggerSettings(
+                printRequestHeaders: kDebugMode,
+                printResponseHeaders: kDebugMode,
+                printResponseMessage: kDebugMode,
+              ),
+            ),
           ],
         ),
     );

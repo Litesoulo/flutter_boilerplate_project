@@ -1,23 +1,11 @@
 import 'package:dio/dio.dart';
-import 'package:flutter/foundation.dart';
-import 'package:talker_dio_logger/talker_dio_logger.dart';
 
 class DioClient {
   // dio instance
   final Dio _dio;
 
   // injecting dio instance
-  DioClient(this._dio) {
-    _dio.interceptors.add(
-      TalkerDioLogger(
-        settings: const TalkerDioLoggerSettings(
-          printRequestHeaders: kDebugMode,
-          printResponseHeaders: kDebugMode,
-          printResponseMessage: kDebugMode,
-        ),
-      ),
-    );
-  }
+  DioClient(this._dio);
 
   // Get:-----------------------------------------------------------------------
   Future<dynamic> get(
@@ -37,7 +25,6 @@ class DioClient {
       );
       return response.data;
     } catch (e) {
-      print(e.toString());
       rethrow;
     }
   }
