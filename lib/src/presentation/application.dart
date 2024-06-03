@@ -37,10 +37,7 @@ class Application extends StatelessWidget {
                 ),
               ],
             ),
-            // home: _userStore.isLoggedIn ? HomeScreen() : LoginScreen(),
 
-            // TODO ADD SLANG
-            // locale: Locale(_languageStore.locale),
             locale: TranslationProvider.of(context).flutterLocale,
             supportedLocales: AppLocaleUtils.supportedLocales,
             localizationsDelegates: const [

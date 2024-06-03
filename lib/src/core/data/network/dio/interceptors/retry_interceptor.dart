@@ -6,12 +6,10 @@ import 'package:dio/dio.dart';
 class RetryInterceptor extends Interceptor {
   final Dio dio;
   final RetryOptions options;
-  final bool shouldLog;
 
   RetryInterceptor({
     required this.dio,
     RetryOptions? options,
-    this.shouldLog = true,
   }) : options = options ?? const RetryOptions();
 
   @override
@@ -32,10 +30,6 @@ class RetryInterceptor extends Interceptor {
     err.requestOptions.extra = err.requestOptions.extra
       ..addAll(extra.toExtra());
 
-    if (shouldLog) {
-      print(
-          '[${err.requestOptions.uri}] An error occurred during request, trying a again (remaining tries: ${extra.retries}, error: ${err.error})');
-    }
     // We retry with the updated options
     await dio
         .request(

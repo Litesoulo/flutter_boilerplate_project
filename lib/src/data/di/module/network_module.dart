@@ -7,13 +7,11 @@ import '../../../core/data/network/dio/interceptors/auth_interceptor.dart';
 import '../../../di/service_locator.dart';
 import '../../network/apis/posts/post_api.dart';
 import '../../network/constants/endpoints.dart';
-import '../../network/interceptors/error_interceptor.dart';
 import '../../sharedpref/shared_preference_helper.dart';
 
 mixin NetworkModule {
   static Future<void> configureNetworkModuleInjection() async {
     // interceptors:------------------------------------------------------------
-    sl.registerSingleton<ErrorInterceptor>(ErrorInterceptor());
     sl.registerSingleton<AuthInterceptor>(
       AuthInterceptor(
         accessToken: () async => await sl<SharedPreferenceHelper>().authToken,
@@ -33,7 +31,6 @@ mixin NetworkModule {
         ..addInterceptors(
           [
             sl<AuthInterceptor>(),
-            sl<ErrorInterceptor>(),
             TalkerDioLogger(
               settings: const TalkerDioLoggerSettings(
                 printRequestHeaders: kDebugMode,
