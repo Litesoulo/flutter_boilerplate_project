@@ -5,7 +5,7 @@ import 'module/repository_module.dart';
 
 mixin DataLayerInjection {
   static Future<void> configureDataLayerInjection() async {
-    await HelperModule.configureLocalModuleInjection();
+    await HelperModule.configureHelperModuleInjection();
     await LocalModule.configureLocalModuleInjection();
     await NetworkModule.configureNetworkModuleInjection();
     await RepositoryModule.configureRepositoryModuleInjection();

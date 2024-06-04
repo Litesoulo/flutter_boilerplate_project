@@ -20,6 +20,6 @@ mixin LocalModule {
     );
 
     // data sources:------------------------------------------------------------
-    // TODO Register data sources
+    // TODO 2) Register local module
   }
 }

@@ -43,6 +43,7 @@ mixin NetworkModule {
     );
 
     // api's:-------------------------------------------------------------------
+    // TODO 1) Register API
     sl.registerSingleton(
       PostApi(sl<DioClient>()),
     );

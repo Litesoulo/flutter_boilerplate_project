@@ -17,5 +17,7 @@ mixin RepositoryModule {
     sl.registerSingleton<UserRepository>(UserRepositoryImpl(
       sl<SharedPreferenceHelper>(),
     ));
+
+    // TODO 3) Register repository
   }
 }
